@@ -1,2 +1,2 @@
 #!/bin/bash
-echo []BINARY
+printf "\%d\n" $((2#BINARY))
