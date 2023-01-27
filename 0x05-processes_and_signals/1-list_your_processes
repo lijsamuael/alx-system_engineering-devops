@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Script prints a list of running processes
+ps aux --forest

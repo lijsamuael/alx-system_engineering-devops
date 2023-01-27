@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#Loops and prints forever
+
+trap 'echo "I hate the kill command"; rm /var/run/holbertonscript.pid; exit' SIGTERM
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'rm /var/run/holbertonscript.pid; exit' SIGQUIT
+
+echo $$ > /var/run/holbertonscript.pid
+
+ALTRU=true
+while [ $ALTRU ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#Manages a background bash script
+
+case $1 in
+	start)
+		sudo ./manage_my_process &
+		echo "$!" > /var/run/my_process.pid
+		echo "manage_my_process started"
+		;;
+	stop)
+		sudo kill "$(cat /var/run/my_process.pid)"
+		sudo rm -f /var/run/my_process.pid
+		echo "manage_my_process stopped"
+		;;
+	restart)
+		sudo kill "$(cat /var/run/my_process.pid)"
+		sudo rm -f /var/run/my_process.pid
+		sudo ./manage_my_process &
+		echo "$!" > /var/run/my_process.pid
+		echo "manage_my_process restarted"
+		;;
+	*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+esac

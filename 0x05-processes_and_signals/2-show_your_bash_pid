@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Script searches for "bash" in running processes
+# shellcheck disable=SC2009
+ps aux --forest | grep "bash"

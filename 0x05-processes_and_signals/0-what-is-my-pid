@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Script prints out the PID of itself
+echo $$

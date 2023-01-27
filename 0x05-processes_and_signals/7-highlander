@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#Loops and prints forever
+
+trap 'echo "I am invincible!!!"' SIGTERM
+
+ALTRU=true
+while [ $ALTRU ]
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
