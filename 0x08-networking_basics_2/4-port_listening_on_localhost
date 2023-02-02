@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#This script opens a TCP port
+sudo nc -lk -p 98

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#Prints a pseudo-clock
+h=0
+
+while [ $h -le 12 ]
+do
+	echo "Hour: $h"
+
+	m=1
+	while [ $m -lt 60 ]
+	do
+		echo "$m"
+
+		m=$(( m + 1 ))
+	done
+
+	h=$(( h + 1 ))
+done

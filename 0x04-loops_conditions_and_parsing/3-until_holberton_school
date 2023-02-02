@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Prints a string 10 times using until
+x=0
+until [ $x -ge 10 ]
+do
+	echo "Holberton School"
+	x=$(( x + 1 ))
+done

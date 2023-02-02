@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Prints the contents of the /etc/passwd file, stylized
+IFS=":"
+while read name pass uid gid gecos hdir shell
+do
+	echo "The user $name is part of the $gid gang, lives in $hdir and rides $shell. $uid's place is protected by the passcode $pass, more info about the user here: $gecos"
+done < /etc/passwd

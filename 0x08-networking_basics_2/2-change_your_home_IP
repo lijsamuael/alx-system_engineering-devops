@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#This script changes some entries in /etc/hosts
+
+IP=127.0.0.2
+sed -r "s/^ *[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+( +localhost)/$IP\1/"\
+	/etc/hosts > tmp
+
+IP=8.8.8.8
+sed -r "s/^ *[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+( +facebook.com)/$IP\1/"\
+	tmp > ~/hosts.new
+
+sudo cp -f ~/hosts.new /etc/hosts
+rm tmp

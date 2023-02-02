@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Prints the usernames and directories of each /etc/passwd entry
+while read line
+do
+	echo "$line" | cut -d":" -f1,3,6
+done < /etc/passwd

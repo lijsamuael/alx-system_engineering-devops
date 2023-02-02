@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Prints the results of ls, one entry per line
+for x in *
+do
+	echo "$x" | cut -d"-" -f2-
+done

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Prints the count of each entry from the previous task and sorts
+awk '{ print $1" "$9 }' apache-access.log | sort |
+	uniq -c | sort -nr
