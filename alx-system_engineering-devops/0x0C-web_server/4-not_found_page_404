@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Configure a new Nginx server so that /redirect_me is redirecting to another page
+#+ The redirection must be a “301 Moved Permanently”
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404.html
+newlines="\\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}"
+sudo sed -i "27i $newlines" /etc/nginx/sites-available/default
+sudo service nginx restart
+sudo service nginx reload
